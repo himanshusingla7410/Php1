@@ -8,3 +8,20 @@ function dd($value){
     die();
 
 }
+
+function abort($code){
+    http_response_code($code);
+
+    require "view/{$code}.php";
+
+    die();
+}
+
+function authorise($condition){
+
+    if (! $condition){
+        abort(Response::FORBIDDEN);
+    };
+
+}
+
