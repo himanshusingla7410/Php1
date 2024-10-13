@@ -5,5 +5,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Book Finder</title>
-    <script src="http://cdn.tailwindcss.com"></script>
+    <script src="http://cdn.tailwindcss.com?plugins=forms"></script>
 </head>

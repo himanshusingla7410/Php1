@@ -1,7 +1,5 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
- 
  
 $routes = [
     '/' => 'controller/index.php',
@@ -9,8 +7,11 @@ $routes = [
     '/notes' => 'controller/notes.php',
     '/note' => 'controller/note.php',
     '/wishlist' => 'controller/wishlist.php',
+    '/add-note' => 'controller/add_note.php',
+    
 ];
- 
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
  
 if (array_key_exists($uri,$routes)){
     require $routes[$uri];

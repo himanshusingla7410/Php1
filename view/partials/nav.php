@@ -12,6 +12,7 @@
               <a href="/add" class="<?= urlIs('/add') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Add Book</a>
               <a href="/notes" class="<?= urlIs('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Notes</a>
               <a href="/wishlist" class="<?= urlIs('/wishlist') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Wishlist</a>
+              
             </div>
           </div>
         </div>

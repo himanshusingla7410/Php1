@@ -14,11 +14,18 @@ require('partials/header.php');
 
         <li> 
           <a href="/note?id=<?= $n['id'] ?>" class="text-blue-500 hover:underline">
-              <?= $n['notes'] ?> 
+              <?= htmlspecialchars($n['note']) ?> 
           </a>
         </li>
 
       <?php endforeach ?>
+
+        <a href="/add-note" class="text-blue-500 hover:underline">
+          <div class="mt-6">
+            <p>Create Note </p>
+          </div>
+        </a>
+
     </div>
   </main>
 
