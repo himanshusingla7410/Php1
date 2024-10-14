@@ -28,9 +28,16 @@ class Database{
     }
 
 
+    public function find(){
+
+        return $this->statement->fetch();
+
+    }
+
+
     public function FindOrAbort(){
 
-        $result = $this->statement->fetch();
+        $result = $this->find();
 
         if (! $result){
             abort(Response::NOT_FOUND);
@@ -40,7 +47,7 @@ class Database{
     }
 
 
-    public function fetchall(){
+    public function get(){
 
         $result = $this->statement->Fetchall();
 

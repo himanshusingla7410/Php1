@@ -11,7 +11,7 @@ $db = new Database($config['database']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $db->query("Insert into notes (id= :id, note= :note, user_id= :user_id) Values (:id, :note, :user_id)",[
+    $db->query('INSERT INTO notes (id, note, user_id) VALUES (:id, :note, :user_id)',[
         'id' => 6,
         'note' => $_POST['note'],
         'user_id' => 1,
