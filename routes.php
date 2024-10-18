@@ -4,10 +4,10 @@
 $routes = [
     '/' => 'controller/index.php',
     '/add' => 'controller/add.php',
-    '/notes' => 'controller/notes.php',
-    '/note' => 'controller/note.php',
+    '/notes' => 'controller/notes/index.php',
+    '/note' => 'controller/notes/show.php',
     '/wishlist' => 'controller/wishlist.php',
-    '/add-note' => 'controller/add_note.php',
+    '/add-note' => 'controller/notes/create.php',
     
 ];
 

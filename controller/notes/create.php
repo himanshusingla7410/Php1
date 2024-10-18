@@ -1,7 +1,7 @@
 <?php
 
 $header = 'Create New Note';
-
+require 'Validator.php';
 $config = require 'config.php';
 $db = new Database($config['database']);
 
@@ -11,18 +11,20 @@ $db = new Database($config['database']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+  
     $error = [];
 
-    if (strlen($_POST['note']) === 0){
+    if ( ! Validator::string($_POST['note'], 1, 10)){
 
-        $error['body'] = ' A body missing';
+        $error['body'] = ' A body should be equal or greater than 1 character';
 
     }
+
 
     if (empty($error)){
 
         $db->query('INSERT INTO notes (id, note, user_id) VALUES (:id, :note, :user_id)',[
-            'id' => 3,
+            'id' => 4,
             'note' => $_POST['note'],
             'user_id' => 1,
         ]);
@@ -37,6 +39,6 @@ function urlIs($page){
      
 }
 
-require 'view/add_note.view.php';
+require 'view/notes/create.php';
 
 ?>

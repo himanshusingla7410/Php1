@@ -1,7 +1,7 @@
 <?php
-require('partials/head.php');
-require('partials/nav.php');
-require('partials/header.php');
+require('view/partials/head.php');
+require('view/partials/nav.php');
+require('view/partials/header.php');
 ?>
 
 <body class="h-full">
@@ -18,7 +18,7 @@ require('partials/header.php');
         <div class="col-span-full">
           <label for="note" class="block text-sm font-medium leading-6 text-gray-900">Note</label>
           <div class="mt-2">
-            <textarea id="note" name="note" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+            <textarea id="note" name="note" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> <?= $_POST['note'] ?? '' ?> </textarea>
           
              <?php if(isset($error['body'])): ?>
               

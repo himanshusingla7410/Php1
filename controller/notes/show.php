@@ -15,7 +15,7 @@ authorise($note['user_id'] === $user);
 
 
 
-require 'view/note.view.php';
+require 'view/notes/show.php';
 
 function urlIs($page){
     return $_SERVER['REQUEST_URI'] === $page;
