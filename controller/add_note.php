@@ -11,12 +11,25 @@ $db = new Database($config['database']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $db->query('INSERT INTO notes (id, note, user_id) VALUES (:id, :note, :user_id)',[
-        'id' => 6,
-        'note' => $_POST['note'],
-        'user_id' => 1,
-    ]);
+    $error = [];
 
+    if (strlen($_POST['note']) === 0){
+
+        $error['body'] = ' A body missing';
+
+    }
+
+    if (empty($error)){
+
+        $db->query('INSERT INTO notes (id, note, user_id) VALUES (:id, :note, :user_id)',[
+            'id' => 3,
+            'note' => $_POST['note'],
+            'user_id' => 1,
+        ]);
+    
+    }
+
+    
 }
 
 function urlIs($page){
