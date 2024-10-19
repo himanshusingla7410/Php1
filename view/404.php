@@ -1,10 +1,8 @@
 <?php
 $header = 'Sorry!';
 require base_path('view/partials/head.php');
-require base_path('view/partials/nav.php');
+//require base_path('view/partials/nav.php');
 require base_path('view/partials/header.php');
-
-
 
 ?>
 

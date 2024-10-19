@@ -1,5 +1,8 @@
 <?php
 
+use core\Response;
+const BASE_PATH = __DIR__ . '/../';
+
 function dd($value){
     echo "<pre>";
     var_dump($value);
@@ -12,7 +15,7 @@ function dd($value){
 function abort($code){
     http_response_code($code);
 
-    require "view/{$code}.php";
+    require base_path("view/{$code}.php");
 
     die();
 }
@@ -26,6 +29,7 @@ function authorise($condition){
 }
 
 function base_path($path){
+    
 
     return BASE_PATH . $path;
 
@@ -37,3 +41,4 @@ function view($path, $attributes = []){
     require base_path('view/'. $path );
 
 }
+

@@ -1,7 +1,8 @@
 <?php
 
-const BASE_PATH = __DIR__ . '/../';
+namespace router;
 
+const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'core/functions.php';
 
@@ -15,7 +16,17 @@ spl_autoload_register(function($class) {
 });
 
 
-require base_path('core/routes.php');
+$router = new \core\Router();
+
+$routes = require base_path('routes.php');
+
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+
+$router->route($uri,$method);
+
+//require base_path('core/router.php');
 
 
 
