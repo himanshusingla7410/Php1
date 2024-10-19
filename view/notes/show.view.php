@@ -19,8 +19,13 @@ require base_path('view/partials/header.php');
             go back..
           </p>
         </div>
-
       </a>
+
+      <form  class="mt-6" method ='POST'>
+        <input type ="hidden" name='id' value='<?= $note['id'] ?>'>
+        <button class= 'text-red-500 text-s'>Delete</button> 
+
+      </form>
     </div>
   </main>
 
