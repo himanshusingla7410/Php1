@@ -1,7 +1,9 @@
 <?php
 
-$header = "Wishlist";
-require 'view/wishlist.view.php';
+//$header = "Wishlist";
+view('wishlist.view.php',[
+    'header' => 'Wishlist'
+]);
 
 
 

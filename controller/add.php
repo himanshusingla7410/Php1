@@ -1,7 +1,9 @@
 <?php
 
-$header = 'Add Book To Library';
-require 'view/add.view.php';
+//$header = 'Add Book To Library';
+view('add.view.php',[
+    'header' => 'Add Book To Library'
+]);
 
 
 function urlIs($page){

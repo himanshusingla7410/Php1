@@ -1,7 +1,8 @@
 <?php
 
-$header = 'Detailed Note';
-$config = require 'config.php';
+use core\Database;
+
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
@@ -15,7 +16,10 @@ authorise($note['user_id'] === $user);
 
 
 
-require 'view/notes/show.php';
+view('notes/show.view.php', [
+    'header' => 'Detailed Note',
+    'note' => $note
+]);
 
 function urlIs($page){
     return $_SERVER['REQUEST_URI'] === $page;

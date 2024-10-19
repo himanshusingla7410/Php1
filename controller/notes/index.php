@@ -1,16 +1,18 @@
 <?php
 
-$header = 'My Notes';
+use core\Database;
 
-
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
 $notes = $db->query("select * from notes where user_id = 1")->get();
 
 
-require 'view/notes/index.php';
+view('notes/index.view.php', [
+    'header' => 'My Notes',
+    'notes' => $notes
+]);
 
 
 function urlIs($page){

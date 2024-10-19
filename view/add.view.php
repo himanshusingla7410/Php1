@@ -1,7 +1,7 @@
 <?php
-require('view/partials/head.php');
-require('view/partials/nav.php');
-require('view/partials/header.php');
+require base_path('view/partials/head.php');
+require base_path('view/partials/nav.php');
+require base_path('view/partials/header.php');
 ?>
 
 <body class="h-full">

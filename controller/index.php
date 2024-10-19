@@ -1,7 +1,8 @@
 <?php
 
-$header = "Library";
-require 'view/index.view.php';
+view('index.view.php',[
+    'header' => 'Library'
+]);
 
 
 

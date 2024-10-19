@@ -1,18 +1,18 @@
 <?php
 
-$header = 'Create New Note';
-require 'Validator.php';
-$config = require 'config.php';
+use core\Database; 
+use core\Validator; 
+
+require base_path('core/Validator.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
-
+$error = [];
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-  
-    $error = [];
+    
 
     if ( ! Validator::string($_POST['note'], 1, 10)){
 
@@ -39,6 +39,9 @@ function urlIs($page){
      
 }
 
-require 'view/notes/create.php';
+view('notes/create.view.php',[
+    'header' => 'Create New Note',
+    'error' => $error
+]);
 
 ?>
