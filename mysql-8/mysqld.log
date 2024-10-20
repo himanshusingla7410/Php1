@@ -109,3 +109,15 @@
 2024-10-19T04:33:50.394835Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
 2024-10-19T04:33:50.395688Z 0 [ERROR] [MY-010119] [Server] Aborting
 2024-10-19T04:33:51.652199Z 0 [System] [MY-010910] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld: Shutdown complete (mysqld 8.0.30)  MySQL Community Server - GPL.
+2024-10-20T06:36:10.154416Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2024-10-20T06:36:10.154488Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-10-20T06:36:10.154528Z 0 [System] [MY-010116] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld (mysqld 8.0.30) starting as process 15324
+2024-10-20T06:36:10.198548Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2024-10-20T06:36:10.552574Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2024-10-20T06:36:11.023220Z 0 [Warning] [MY-013829] [Server] Missing data directory for ICU regular expressions: C:\laragon\bin\mysql\mysql-8.0.30-winx64\lib\private\.
+2024-10-20T06:36:11.029380Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2024-10-20T06:36:11.030346Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2024-10-20T06:36:11.032858Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+2024-10-20T06:36:11.034101Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2024-10-20T06:36:11.034903Z 0 [ERROR] [MY-010119] [Server] Aborting
+2024-10-20T06:36:12.326409Z 0 [System] [MY-010910] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld: Shutdown complete (mysqld 8.0.30)  MySQL Community Server - GPL.
