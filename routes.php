@@ -13,3 +13,6 @@ $router->get('/add-note', 'controller/notes/create.php');
 $router->post('/notes', 'controller/notes/store.php');
 $router->delete('/note', 'controller/notes/destroy.php');
 $router->patch('/note', 'controller/notes/update.php');
+
+$router->get('/register', 'controller/registeration/create.php');
+$router->post('/register', 'controller/registeration/store.php');
