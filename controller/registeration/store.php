@@ -42,6 +42,10 @@ if (! empty($error)){
 
 }
 
+$_SESSION['user']= [
+    'email'=> $email
+];
+
 
 if ($user){
 
@@ -55,17 +59,16 @@ if ($user){
     $db->query('INSERT INTO users (id, email, password) VALUES (:id, :email, :password)',[
         'id' => 4,
         'email' => $_POST['email'],
-        'password' => $_POST['password'],
+        'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
     ]);
-
+    
     header('Location: /');
     exit();
 
 }
 
-$_SESSION['user']= [
-    'email'=> $email
-];
+
+
 
 
 function urlIs($page){

@@ -10,7 +10,9 @@ require base_path('view/partials/header.php');
   
   <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      Welcome to Home page
+      Hello, <?= $_SESSION['user']['email'] ?? 'Guest'?> 
+      
+      <p>Welcome to Home page</p>
     </div>
   </main>
 
