@@ -10,7 +10,11 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white " aria-current="page">Home</a>
               <a href="/add" class="<?= urlIs('/add') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Add Book</a>
-              <a href="/notes" class="<?= urlIs('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Notes</a>
+
+              <?php if($_SESSION['user'] ?? false) : ?>
+                <a href="/notes" class="<?= urlIs('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Notes</a>
+              <?php endif ?>
+
               <a href="/wishlist" class="<?= urlIs('/wishlist') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white ">Wishlist</a>
               
             </div>
@@ -28,16 +32,33 @@
 
             <!-- Profile dropdown -->
             <div class="relative ml-3">
-              <div>
-                <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                  <span class="absolute -inset-1.5"></span>
-                  <span class="sr-only">Open user menu</span>
-                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                </button>
-              </div>
+              
 
-             
+                  <?php if (isset($_SESSION['user'])) : ?>
+                    <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm       focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    </button>
+                  
+                    </div>
+                <?php else : ?> 
+                  <div class="hidden md:flex space-x-4">
+                    <a href="/login" class="<?= urlIs('/login') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">Log In</a>
+                    <a href="/register" class="<?= urlIs('/register') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">Register</a>
+                  </div>
+                <?php endif ?>
+                <?php if (isset($_SESSION['user'])) : ?>
+                <div class="hidden md:flex space-x-4">
+                    <a href="/logout" class="<?= urlIs('/logout') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> block rounded-md px-3 py-2 hover:bg-gray-700 hover:text-white">Log Out</a> 
+                </div>
+            <?php endif ?>   
+                          
             </div>
+            
+            
+              
+            
           </div>
         </div>
         <div class="-mr-2 flex md:hidden">

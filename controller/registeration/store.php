@@ -51,7 +51,7 @@ if ($user){
 
     //head to login page as we already have a user
     
-    header('Location: /add');
+    header('Location: /login');
     exit();
 
 } else{
