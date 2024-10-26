@@ -1,6 +1,5 @@
 <?php
 
-
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -29,6 +28,12 @@ if ($forms->validate($email, $password)){
 
 
 Session::flash('error', $forms->error());
+//Session::put('old', $email);
+Session::flash('old', [
+    'email' => $email
+]);
+
+
 
 return redirect('/login');
 
