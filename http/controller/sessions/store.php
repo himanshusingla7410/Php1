@@ -1,47 +1,28 @@
 <?php
 
+use core\Authenticator;
+use core\LoginForm;
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-use core\Authenticator;
-use core\LoginForm;
-use core\Session;
 
 
-$forms = new LoginForm();
-
-if ($forms->validate($email, $password)){
-
-    $auth = new Authenticator;
-
-    if ($auth->attempt($email,$password)){ // can replace auth with new authenticator directly for more clean up
-
-        redirect('/');
-
-    } else {
-
-        $forms->errors('email', 'Credentials mismatch!');
-
-    }
-
-}
-
-
-Session::flash('error', $forms->error());
-//Session::put('old', $email);
-Session::flash('old', [
-    'email' => $email
+$forms= LoginForm::validate($attributes=[
+    'email' => $email,
+    'password'=> $password
 ]);
 
+$signedIn= (new Authenticator)->attempt($attributes['email'],$attributes['password']);
 
 
-return redirect('/login');
+if (! $signedIn){ 
 
+    $forms->errors('email', 'Credentials mismatch!')->throw();
+    
+}
 
-
-
-
-
+redirect('/');
 
 
 

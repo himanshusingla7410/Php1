@@ -22,4 +22,3 @@ foreach ($posts as $post){
 
 
 
-
