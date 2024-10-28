@@ -1,0 +1,16 @@
+{
+    "name": "singl/php1",
+    "authors": [
+        {
+            "name": "Hsingla45",
+            "email": "singlahimanshu050@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "core\\": "core/",
+            "http\\": "http/"
+        }
+    }
+}
