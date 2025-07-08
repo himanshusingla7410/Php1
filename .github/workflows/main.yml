@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - master
+
+
+jobs: 
+  name: deploy changes
+    runs-on: Ubuntu@3.110.197.112
+
+
+    steps:
+    -uses: actions/checkout@v4
+
+
