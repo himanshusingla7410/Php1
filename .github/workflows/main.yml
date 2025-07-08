@@ -1,15 +1,40 @@
+name: push to deploy
+
 on:
   push:
-    branches:
-      - master
-
+    branches: [master]
 
 jobs: 
-  name: deploy changes
-    runs-on: Ubuntu@3.110.197.112
+  deploy:
+    name: deploy to prod
+    runs-on: Ubuntu-latest
+
+    steps: 
+      - name: copy repo
+      - uses: appleboy/scp-action@v0.1.0
+      - with:
+          host: ${{ server.IP }}
+          username: ubuntu
+          key: ${{server.key}}
+          source: './'
+          target: '/var/www/HTML/myapp'
+          rm: true
+
+    
+      - name: fix premissions
+      - uses: appleboy/ssh@v1
+      - with: 
+          host: ${{ server.IP }}
+          username: ubuntu
+          key: ${{ server.key }}
+          run: | 
+            sudo chown -R www-data:www-data /var/www/HTML/myapp
+            sudo chmod -R 755 /var/www/HTML/myapp/storage
+            sudo systemctl restart apache2
+            cd var/www/HTML/myapp
+            PHP artisan config:clear
+            PHP artisan view:clear
+            PHP artisan route: clear
 
 
-    steps:
-    -uses: actions/checkout@v4
-
-
+   
